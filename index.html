@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <img class="logo" src="./img/logo.jpg" alt="" />
+
+      <div class="navbar-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Products</a>
+
+        <div class="navbar-links-search">
+          <input type="search" placeholder="Search plants..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="cart" id="navCartBtn" onclick="openCartModal()">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="./img/banner1.webp" alt="" />
+    </div>
+
+    <!-- Plants -->
+    <div class="plant-list-wrap">
+      <h2>Plants picked for you</h2>
+      <div id="plant-list" class="plant-list"></div>
+    </div>
+
+    <!-- Cart -->
+    <div id="cartModal" class="cart-modal">
+      <div class="cart-content">
+        <span id="closeCart" class="close"
+          ><i class="fa-regular fa-circle-xmark"></i
+        ></span>
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+          <button id="checkoutBtn">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plant Detail Modal -->
+    <div id="productDetailModal" class="product-modal">
+      <div class="modal-content">
+        <span id="closeProductModal" class="close">&times;</span>
+        <div id="product-detail-container"></div>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="./script.js"></script>
+  </body>
+</html>
