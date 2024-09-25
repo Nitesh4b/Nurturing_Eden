@@ -95,6 +95,36 @@ body {
   cursor: pointer;
 }
 
+.navbar-link-mobile {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  background: #fff;
+}
+
+.navbar-link-mobile a {
+  color: #222;
+  text-decoration: none;
+  padding: 8px;
+}
+
+#navMobileBtn {
+  display: none;
+
+  @media (max-width:760px) {
+    display: flex;
+  }
+}
+
+.showMobileNav {
+  display: flex;
+}
+
 .banner {
   width: 100%;
   padding: 8px;
@@ -290,6 +320,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  overflow-y: auto;
 }
 
 .cart-content h2 {
@@ -445,4 +476,79 @@ body {
   font-size: 40px;
   font-weight: semibold;
   z-index: 1;
+}
+
+footer {
+  border-top: 1px solid #eee;
+}
+
+.footer-wrap {
+  display: flex;
+  gap: 64px;
+  padding: 32px 64px 32px 64px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+    gap: 32px;
+    padding: 28px 16px;
+  }
+}
+
+.footer-wrap-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 384px;
+}
+
+.footer-wrap-flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-wrap-flex-col a {
+  color: #222;
+}
+
+.footer-wrap-flex img {
+  width: 200px;
+}
+
+.footer-copy {
+  text-align: center;
+  padding: 28px;
+  background: #eee;
+}
+
+.footer-wrap-flex-more {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 384px;
+}
+
+.footer-wrap-flex-more input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-wrap-flex-more button {
+  padding: 10px 40px;
+  width: fit-content;
+  border-radius: 40px;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-wrap-flex-col-more {
+  display: flex;
+  gap: 8px;
 }

@@ -259,22 +259,24 @@ function openProductDetailModal(plant) {
                 <div class="product-bottom-details">
                     <div class="product-price">
                         <small><strike>$${Math.round(
-                          plant.price +
-                            (plant.discount
-                              ? (plant.price * parseFloat(plant.discount)) / 100
-                              : 0)
-                        )}</strike></small>
+    plant.price +
+    (plant.discount
+      ? (plant.price * parseFloat(plant.discount)) / 100
+      : 0)
+  )}</strike></small>
                         <strong>$${Math.round(plant.price)}</strong>
                     </div>
-                    <div class="product-cart" onclick="addToCartFromModal(${JSON.stringify(
-                      plant
-                    )})">
+                    <div class="product-cart" id="addToCartBtnModal">
                         Add to cart <i class="fa fa-shopping-cart"></i>
                     </div>
                 </div>
             </div>
         </div>
     `;
+
+  document.getElementById('addToCartBtnModal').addEventListener('click', function () {
+    addToCartFromModal(plant);
+  });
 
   productDetailModal.style.display = "flex";
 }
@@ -368,6 +370,16 @@ function openCartModal() {
   cartModal.style.display = "block";
 }
 
+function openNavMobile() {
+  const navMobile = document.getElementById("navMobile");
+  if (navMobile) {
+    navMobile.classList.toggle("showMobileNav");
+  } else {
+    console.error("Mobile navigation element not found.");
+  }
+}
+
+
 closeCartBtn.onclick = function () {
   cartModal.style.display = "none";
 };
@@ -383,9 +395,8 @@ plants.forEach((plant, index) => {
         <div class="product-card">
             ${plant.sale ? '<div class="badge">On Sale</div>' : ""}
             <div class="product-tumb">
-                <img src=${
-                  plant.image
-                } alt="" onclick="openProductDetailModal(plants[${index}])">
+                <img src=${plant.image
+    } alt="" onclick="openProductDetailModal(plants[${index}])">
             </div>
             <div class="product-details">
                 <span class="product-category">${plant.subheading}</span>
@@ -393,11 +404,11 @@ plants.forEach((plant, index) => {
                 <div class="product-bottom-details">
                     <div class="product-price">
                         <small><strike>$${Math.round(
-                          plant.price +
-                            (plant.discount
-                              ? (plant.price * parseFloat(plant.discount)) / 100
-                              : 0)
-                        )}</strike></small>
+      plant.price +
+      (plant.discount
+        ? (plant.price * parseFloat(plant.discount)) / 100
+        : 0)
+    )}</strike></small>
                         <strong>$${Math.round(plant.price)}</strong>
                     </div>
                     <div class="product-cart" onclick="addToCart(${index})">
